@@ -119,6 +119,8 @@ public final class AuthenticationContextConfigurationClient {
         configuration = initializeConfiguration(uri, configuration);
         configuration = establishOverrides(uri, protocolDefaultPort, configuration);
 
+        System.out.printf("getAuthenticationConfiguration uri=%s, protocolDefaultPort=%d, abstractType=%s, abstractTypeAuthority=%s, MatchRule=[%s], AuthenticationConfiguration=[%s]\n",
+                uri, protocolDefaultPort, abstractType, abstractTypeAuthority, node != null ? node.rule : null, configuration);
         log.tracef("getAuthenticationConfiguration uri=%s, protocolDefaultPort=%d, abstractType=%s, abstractTypeAuthority=%s, MatchRule=[%s], AuthenticationConfiguration=[%s]",
                 uri, protocolDefaultPort, abstractType, abstractTypeAuthority, node != null ? node.rule : null, configuration);
 
